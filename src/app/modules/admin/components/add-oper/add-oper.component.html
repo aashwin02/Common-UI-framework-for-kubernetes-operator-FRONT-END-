@@ -1,0 +1,17 @@
+<div class="xyz" >
+    <br />
+    <label>Operator Name</label>
+    <br />
+    <input type="text" (change)="getName(name.value)" #name placeholder="Operator name">
+    <br /><br />
+    <label>Upload log files</label>
+    <br />
+    <input type="file" (change)="getFile($event)" accept=".log,.txt,.json">
+
+<div class = "search">
+    <button type="button" class="btn btn-outline-primary" (click)="submitData()">Submit</button>
+</div>
+
+</div>
+
+

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- <a class="navbar-brand" style="margin-left: 5px;">Navbar</a> -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left: 5px;" >
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" >
+                <a class="nav-link" routerLink="/dashboard" >Dashboard</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogged() == false ">
+                <a class="nav-link" routerLink="/login" >Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogged()" >
+                <a class="nav-link" routerLink="/admin" >Add an operator</a>
+            </li>
+            <li class="nav-item" *ngIf="isLogged()" (click)="logout()">
+                <a class="nav-link" routerLink="/login" >Logout</a>
+            </li>
+            <!-- <li class=" btn-primary nav-item text-white" role="button" *ngIf="isLogged()">
+                <a class="nav-link text-white" (click)="logout()">logout</a>
+            </li> -->
+        </ul>
+    </div>
+    <a class="navbar-brand" style="position: absolute ;right: 0px; margin-right: 20px;">Kube Logger</a>
+</nav>
+
+<router-outlet></router-outlet>
+
+<!-- <app-footer></app-footer> -->

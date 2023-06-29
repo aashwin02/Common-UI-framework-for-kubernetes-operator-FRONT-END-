@@ -1,0 +1,35 @@
+<br />
+<div class = "form-group">
+    <label for="comp"><h5>Operator</h5></label>
+    <select class="form-select" id="comp" (click)="getMenuList()" (change)="compCall($event.target)">
+    <!-- <select class="form-select" id="comp"> -->
+        <option value="">Select an operator</option>
+        <option *ngFor="let i of foodlist" [value]="i" >{{i}}</option>
+    </select>
+</div>
+
+<div class = "form-group">
+    <label for="comp"><h5>Time Filter</h5></label>
+    <select class="form-select" id="comp" (change)="timeFilter($event)">
+    <!-- <select class="form-select" id="comp"> -->
+        <option>Select time filter</option>
+        <option>ALL</option>
+        <option>Last 15 minutes</option>
+        <option>Last 30 minutes</option>
+        <option>Last 1 hour</option>
+    </select>
+</div>
+
+<div class = "search">
+    <button type="button" class="btn btn-outline-primary" (click)="getLog()">Submit</button>
+    <!-- <button type="button" class="btn btn-outline-primary">Submit</button> -->
+</div>
+
+
+<div class="files" *ngIf = "logfile" >
+    <div style="background-color:aliceblue; margin-right: 5 px;" >
+        <li *ngFor="let j of logfile">{{j}}</li>
+        <!--<h6>{{logfile}}</h6>-->
+    </div>
+    
+</div>
